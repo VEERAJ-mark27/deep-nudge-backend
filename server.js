@@ -11,7 +11,15 @@ app.use('/problems', problemRoutes);
 app.use('/attempts', attemptRoutes);
 
 app.get('/', (req, res) => {
-  res.send('Deep Nudge API Running');
+  res.send(`
+    <h2>Deep Nudge API </h2>
+    <p>Available Endpoints:</p>
+    <ul>
+    <li>/problems/:id?step=1&userId=1</li>
+    <li>/problems/weakness/:userId</li>
+    <li>POST /attempts</li>
+    </ul>
+`);
 });
 
 app.listen(5000, () => {
